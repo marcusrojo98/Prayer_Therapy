@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2>Confirm Your Donation</h2>
+            <form method="post" action="{{ form.get_endpoint }}">
+                {% csrf_token %}
+                {{ form.render }}
+                <button type="submit" class="btn btn-primary">Proceed to PayPal</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

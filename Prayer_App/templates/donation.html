@@ -1,0 +1,19 @@
+{% extends "base.html" %}  {# Assuming you have a base template for your project #}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2>Make a Donation</h2>
+            <form method="POST" action="{% url 'process_donation' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="amount">Donation Amount:</label>
+                    <input type="number" class="form-control" id="amount" name="amount" placeholder="Enter the amount" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Donate via PayPal</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

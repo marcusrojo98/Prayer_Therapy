@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Prayer therapy{% endblock %}
+{% block header_title %}Home - Prayer therapy{% endblock %}
+{% block content %}
+    <!-- Jumbotron for Main Content -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">Welcome to Prayer therapy</h1>
+            <p class="lead">This is a sample Prayer therapy</p>
+        </div>
+    </div>
+
+    <!-- Upcoming Events Section -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Upcoming Events</h2>
+                <ul class="event-list">
+                    <li>Event 1 - Date and Time</li>
+                    <li>Event 2 - Date and Time</li>
+                    <li>Event 3 - Date and Time</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <!-- Add any additional content or widgets here -->
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block footer_year %}2023{% endblock %}
+{% block footer_text %}Prayer therapy. All rights reserved.{% endblock %}

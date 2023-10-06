@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* Additional CSS styles for the video container */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio for responsive video */
+            height: 0;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Watch Videos</h1>
+        <div class="row">
+            <!-- Loop through your video URLs from the database and create a video player for each -->
+            {% for video_url in video_urls %}
+                <div class="col-md-6 mb-4">
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="{{ video_url }}" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+{% endblock %}
